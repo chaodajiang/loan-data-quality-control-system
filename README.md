@@ -1,2 +1,12 @@
-# loan-data-quality-control-system
-A production-style data quality control and monitoring system for loan lifecycle management, featuring real-time validation pipelines, financial data integrity checks, and batch monitoring for reporting and risk control.
+# Loan Data Quality Control & Monitoring System
+
+This project simulates a production-style data quality framework for financial loan systems, including:
+
+- Pre-ingestion validation (data quality control)
+- Real-time accounting & repayment processing
+- Post-ingestion monitoring and anomaly detection
+- Monthly reporting pipeline
+
+## Status
+
+Project initialization complete. Next step: build data pipeline.
