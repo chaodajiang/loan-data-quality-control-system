@@ -9,4 +9,4 @@ row_index,loan_id,disbursement_id,rule_type,field,error_code,error_message
 10,LN_NEW000011,DISB20260508000011,soft,region,MISSING_OPTIONAL_FIELD,region is missing but record can still be accepted.
 2,LN_NEW000003,DISB20260506000004,strong,disbursement_id,DUPLICATE_IN_BATCH,disbursement_id is duplicated within the incoming batch.
 3,LN_NEW000004,DISB20260506000004,strong,disbursement_id,DUPLICATE_IN_BATCH,disbursement_id is duplicated within the incoming batch.
-4,LN_NEW000005,DISB20260115000001,strong,disbursement_id,DUPLICATE_WITH_HISTORY,disbursement_id already exists in historical/core data.
+4,LN_NEW000005,DISB20250101000001,strong,disbursement_id,DUPLICATE_WITH_HISTORY,disbursement_id already exists in historical/core data.

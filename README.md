@@ -2,13 +2,13 @@
 
 ## 🚀 Project Value
 
-This project simulates a **production-grade data quality control system** for financial loan operations, focusing on ensuring data integrity at the point of ingestion and throughout downstream processing.
+This project simulates a **production-grade data quality control and risk monitoring system** for financial loan operations, focusing on ensuring data integrity at the point of ingestion and throughout downstream processing.
 
 It addresses a critical real-world problem:
 
-> In financial systems, **bad data is more expensive to fix downstream than to block at ingestion**.
+> In financial systems, **bad data is more expensive to fix downstream than to block at ingestion.**
 
-This system demonstrates how to **prevent, detect, and monitor data quality issues** before they impact financial reporting, risk models, and regulatory outputs.
+This system demonstrates how to **prevent, detect, monitor, and analyze** data quality issues before they impact financial reporting, risk models, and regulatory outputs.
 
 ---
 
@@ -16,26 +16,29 @@ This system demonstrates how to **prevent, detect, and monitor data quality issu
 
 This solution is designed to:
 
-* Prevent invalid loan transactions from entering core systems
-* Reduce downstream reconciliation and manual correction costs
-* Improve reliability of financial reporting and KPI tracking
-* Enable early detection of systemic data issues
+* Block invalid loan records before they corrupt core financial systems
+* Detect duplicate transactions that cause double-counting in portfolio balances
+* Enforce regulatory-aligned business rules (e.g., interest rate caps under U.S. lending law)
+* Score and stratify portfolio risk by loan characteristics, region, and source system
+* Generate automated monthly reports with business-ready interpretation and recommended actions
 
 ---
 
 ## 🧠 What This Project Demonstrates
 
 * End-to-end data pipeline design
-* Financial data modeling (loan, repayment, accounting)
-* Data quality control (pre-ingestion validation)
-* Data observability (monitoring & metrics)
-* Business + technical integration
+* Financial data modeling (loan transactions, repayment schedules, double-entry accounting)
+* Data quality control — two-tier validation (hard reject + soft warning)
+* SQL schema design with constraints, indexes, and audit-ready validation queries
+* Exploratory data analysis — portfolio distribution, regional exposure, repayment behavior
+* Risk stratification — origination-based scoring across four financial risk factors
+* Business storytelling — every output includes interpretation, not just numbers
 
 ---
 
 ## 🏗️ System Overview
 
-The system is structured around a two-layer architecture:
+The system is structured around a three-layer architecture:
 
 ### 1. Data Ingestion Control (Pre-validation)
 
@@ -43,15 +46,23 @@ Incoming data is validated using:
 
 * Strong validation rules (reject invalid records)
 * Soft validation rules (flag warnings)
-* Duplicate detection (batch + historical)
+* Duplicate detection (batch-level + historical)
 
 ### 2. Data Quality Monitoring (Post-validation)
 
 Validated data is monitored through:
 
 * Quality metrics (acceptance rate, rejection rate, error distribution)
-* Issue classification
-* Automated reporting
+* Issue classification by rule type, field, and error code
+* Automated monthly report with executive summary and recommended actions
+
+### 3. Portfolio Risk Analysis (Notebooks)
+
+Accepted loan data is analyzed through:
+
+* EDA covering loan amount, interest rate, term, and regional distribution
+* Origination-based risk scoring across four factors: rate, size, term, source system
+* Risk grade assignment (A–D) with portfolio exposure breakdown
 
 ---
 
@@ -60,62 +71,43 @@ Validated data is monitored through:
 ```text
 Incoming Data (External / Internal)
         ↓
-Validation Pipeline
+Validation Pipeline  →  Rejected Records + Error Log
         ↓
-Accepted Data / Rejected Data
+Accepted Data
         ↓
 Monitoring & Metrics
         ↓
 Monthly Data Quality Report
+        ↓
+EDA + Risk Scoring (Notebooks)
 ```
 
 ---
 
 ## 📊 Sample Output
 
-The system generates a production-style report:
+**Monthly Data Quality Report — May 2026**
 
-```text
-reports/monthly_data_quality_report.md
-```
+| Metric | Value |
+|---|---|
+| Total incoming records | 100 |
+| Accepted | 90 (90.0%) |
+| Rejected | 10 (10.0%) |
+| Data Quality Score | **92.9 / 100** |
 
-Example insights include:
-
-* Data quality score
-* Rejection rate
-* Top validation issues
-* Business interpretation
-* Recommended actions
-
----
-
-## ⚙️ How to Run
-
-```bash
-git clone https://github.com/chaodajiang/loan-data-quality-control-system.git
-cd loan-data-quality-control-system
-
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-python src/generate_sample_data.py
-python src/inject_data_issues.py
-python src/validation_pipeline.py
-python src/quality_monitoring.py
-python src/generate_monthly_report.py
-```
+Top issues flagged: duplicate disbursement IDs, missing required fields, invalid interest rates — each linked to a concrete business risk in the full report.
 
 ---
 
 ## 🗂️ Project Structure
 
 ```text
-src/        core data pipeline logic
-data/       raw / incoming / accepted / rejected
-docs/       system design & business rules
-reports/    generated monitoring reports
-sql/        validation rule definitions
+src/          core data pipeline logic
+notebooks/    EDA and portfolio risk analysis
+data/         raw / incoming / accepted / rejected
+docs/         system design, business context & data dictionary
+reports/      generated quality reports and risk-scored portfolio output
+sql/          full DDL schema and validation rule queries
 ```
 
 ---
@@ -129,6 +121,6 @@ MS in Business Analytics, UC San Diego
 
 ## 💡 Key Takeaway
 
-This project reflects how modern data teams:
+This project reflects how modern data teams operate in financial services:
 
-> Move from “fixing bad data” to **preventing bad data from entering the system in the first place**
+> Move from "fixing bad data" to **preventing bad data from entering the system in the first place** — and from reporting numbers to **turning data into risk decisions.**
