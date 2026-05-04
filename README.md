@@ -97,7 +97,7 @@ cd loan-data-quality-control-system
 
 python -m venv .venv
 source .venv/bin/activate
-pip install pandas numpy
+pip install -r requirements.txt
 
 python src/generate_sample_data.py
 python src/inject_data_issues.py
