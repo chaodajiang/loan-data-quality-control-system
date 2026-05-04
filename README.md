@@ -31,7 +31,7 @@ This solution is designed to:
 * Data quality control — two-tier validation (hard reject + soft warning)
 * SQL schema design with constraints, indexes, and audit-ready validation queries
 * Exploratory data analysis — portfolio distribution, regional exposure, repayment behavior
-* Risk stratification — origination-based scoring across four financial risk factors
+* Credit risk modeling — logistic regression scorecard using origination-time features (no data leakage), with ROC curve, feature coefficients, risk grade assignment, and model calibration
 * Business storytelling — every output includes interpretation, not just numbers
 
 ---
