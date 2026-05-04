@@ -1,0 +1,12 @@
+row_index,loan_id,disbursement_id,rule_type,field,error_code,error_message
+0,,DISB20260504000001,strong,loan_id,MISSING_REQUIRED_FIELD,loan_id is required but missing.
+1,LN_NEW000002,,strong,disbursement_id,MISSING_REQUIRED_FIELD,disbursement_id is required but missing.
+5,LN_NEW000006,DISB20260502000006,strong,disbursement_amount,INVALID_AMOUNT,disbursement_amount must be greater than 0.
+6,LN_NEW000007,DISB20260504000007,strong,interest_rate,INVALID_INTEREST_RATE,interest_rate must be greater than 0 and no more than 36%.
+7,LN_NEW000008,DISB20260504000008,strong,accounting_date,MISSING_REQUIRED_FIELD,accounting_date is required but missing.
+8,LN_NEW000009,DISB20260509000009,strong,source_system,MISSING_REQUIRED_FIELD,source_system is required but missing.
+9,LN_NEW000010,BAD_ID_000009,strong,disbursement_id,INVALID_DISBURSEMENT_ID_FORMAT,disbursement_id must follow format DISBYYYYMMDDNNNNNN.
+10,LN_NEW000011,DISB20260508000011,soft,region,MISSING_OPTIONAL_FIELD,region is missing but record can still be accepted.
+2,LN_NEW000003,DISB20260506000004,strong,disbursement_id,DUPLICATE_IN_BATCH,disbursement_id is duplicated within the incoming batch.
+3,LN_NEW000004,DISB20260506000004,strong,disbursement_id,DUPLICATE_IN_BATCH,disbursement_id is duplicated within the incoming batch.
+4,LN_NEW000005,DISB20260115000001,strong,disbursement_id,DUPLICATE_WITH_HISTORY,disbursement_id already exists in historical/core data.

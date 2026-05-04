@@ -16,10 +16,10 @@ def generate_loan_transactions(n=100):
 
     for i in range(1, n + 1):
         loan_id = f"LN{i:06d}"
-        disbursement_id = f"DISB{i:06d}"
         customer_id = f"CUST{np.random.randint(1, 80):06d}"
 
         transaction_date = start_date + timedelta(days=np.random.randint(0, 90))
+        disbursement_id = f"DISB{transaction_date.strftime('%Y%m%d')}{i:06d}"
 
         if np.random.rand() < 0.15:
             accounting_date = transaction_date - timedelta(days=1)

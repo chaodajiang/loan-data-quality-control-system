@@ -40,6 +40,9 @@ Examples:
 - Missing accounting date
 - Invalid disbursement amount
 - Duplicate transaction ID
+- Disbursement ID must be unique within the incoming batch
+- Disbursement ID must not already exist in historical accepted/core data
+- Disbursement ID must follow format: DISBYYYYMMDDNNNNNN
 
 ### Soft Validation
 

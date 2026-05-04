@@ -7,7 +7,7 @@ Represents loan disbursement records from internal systems or external partner p
 | Field | Description | Required | Validation Type |
 |---|---|---:|---|
 | loan_id | Unique loan contract ID | Yes | Strong |
-| disbursement_id | Unique disbursement transaction ID | Yes | Strong |
+| disbursement_id | Unique disbursement transaction ID (format: DISBYYYYMMDDNNNNNN) | Yes | Strong |
 | customer_id | Borrower ID | Yes | Strong |
 | source_system | Internal or external data source | Yes | Strong |
 | transaction_date | Actual transaction date | Yes | Strong |
