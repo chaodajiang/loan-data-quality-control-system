@@ -1,0 +1,2 @@
+total_records,accepted_records,rejected_records,acceptance_rate,rejection_rate,strong_error_count,soft_warning_count,soft_warning_rate,overall_quality_score
+100,90,10,0.9,0.1,10,1,0.01,92.9

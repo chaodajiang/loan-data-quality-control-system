@@ -1,0 +1,11 @@
+rule_type,field,error_code,issue_count
+strong,disbursement_id,DUPLICATE_IN_BATCH,2
+soft,region,MISSING_OPTIONAL_FIELD,1
+strong,accounting_date,MISSING_REQUIRED_FIELD,1
+strong,disbursement_amount,INVALID_AMOUNT,1
+strong,disbursement_id,DUPLICATE_WITH_HISTORY,1
+strong,disbursement_id,INVALID_DISBURSEMENT_ID_FORMAT,1
+strong,disbursement_id,MISSING_REQUIRED_FIELD,1
+strong,interest_rate,INVALID_INTEREST_RATE,1
+strong,loan_id,MISSING_REQUIRED_FIELD,1
+strong,source_system,MISSING_REQUIRED_FIELD,1
