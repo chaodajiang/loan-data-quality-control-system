@@ -82,3 +82,55 @@ Data Sources
 → Accounting Entries & Repayment Schedule
 → Monthly Monitoring
 → Reports / Dashboard
+
+
+## 7. Business Rules
+
+### 7.1 Interest Calculation
+
+Interest is calculated using:
+
+Monthly Interest = Outstanding Principal × (Annual Interest Rate / 12)
+
+All interest values are rounded to 2 decimal places.
+
+---
+
+### 7.2 Repayment Schedule
+
+- Principal is distributed evenly across installments
+- Each installment principal is rounded to 2 decimal places
+- The final installment adjusts for rounding differences to ensure:
+
+  Total Principal = Loan Amount
+
+---
+
+### 7.3 Accounting Entries
+
+Accounting entries are generated in real time for:
+
+1. Loan disbursement
+2. Interest accrual
+3. Repayment
+
+Each transaction triggers accounting updates.
+
+---
+
+### 7.4 Transaction Granularity
+
+- The system operates at transaction level
+- A single loan may have multiple transactions per day
+- Each transaction can update:
+
+  - Accounting entries
+  - Repayment schedule
+
+---
+
+### 7.5 Data Consistency Rules
+
+- Sum of repayment schedule principal must equal loan amount
+- Debit must equal credit for each accounting transaction
+- Repayment cannot exceed outstanding balance
